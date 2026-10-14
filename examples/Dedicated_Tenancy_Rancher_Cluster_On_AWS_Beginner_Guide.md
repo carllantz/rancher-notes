@@ -16,6 +16,7 @@ Think of tenancy like housing. Shared tenancy is an apartment building: you have
 
 ![Shared tenancy versus Dedicated Instances: on the left, tenancy default is like an apartment building, with your EC2 instance on one physical AWS server next to instances of Customer B and Customer C; on the right, tenancy dedicated is like a house only you live in but still rent from AWS, with two of your EC2 instances on a physical AWS server used by your account only; in a VPC with default tenancy, tenancy is set on each EC2 instance, and this guide sets tenancy dedicated for the pools cp, wd and ws](assets/dedicated-tenancy-beginner-01-shared-vs-dedicated.png)
 
+## Youtube Video
 https://www.youtube.com/watch?v=LarVMAQoPkE
 
 ## Pre-requisites
