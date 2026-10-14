@@ -2,9 +2,6 @@
 
 A step-by-step beginner's guide to building a Rancher RKE2 cluster on AWS where every server is an EC2 Dedicated Instance, using an existing Rancher management cluster, existing IAM resources and an existing VPC.
 
-## Youtube Video
-https://www.youtube.com/watch?v=LarVMAQoPkE
-
 ## Task
 
 **Dedicated tenancy** is an AWS setting that runs your EC2 instances (virtual servers you rent from AWS) on hardware that is dedicated to your AWS account alone. This guide shows you how to build a Kubernetes cluster where every server is a Dedicated Instance, managed by **Rancher**. Rancher's usual EC2 tool, the amazonec2 node driver, cannot ask AWS for dedicated hardware. So this guide uses **CAPA** (Cluster API Provider for AWS), a tool that Rancher can use instead. You start from things that already exist: a Rancher management cluster, IAM instance profiles, an IAM access key, and a VPC (your private network in AWS) with its subnets. You add CAPA to Rancher, give Rancher the access key, and describe the new cluster in a Helm chart (a small package of templates plus a settings file). One command then builds the cluster inside your VPC.
@@ -18,6 +15,8 @@ The diagram shows the big picture: what already exists, and what CAPA creates.
 Think of tenancy like housing. Shared tenancy is an apartment building: you have your own flat, but your neighbours share the building. Dedicated tenancy is a house that only you live in, but you still rent it, and AWS still owns and runs it.
 
 ![Shared tenancy versus Dedicated Instances: on the left, tenancy default is like an apartment building, with your EC2 instance on one physical AWS server next to instances of Customer B and Customer C; on the right, tenancy dedicated is like a house only you live in but still rent from AWS, with two of your EC2 instances on a physical AWS server used by your account only; in a VPC with default tenancy, tenancy is set on each EC2 instance, and this guide sets tenancy dedicated for the pools cp, wd and ws](assets/dedicated-tenancy-beginner-01-shared-vs-dedicated.png)
+
+https://www.youtube.com/watch?v=LarVMAQoPkE
 
 ## Pre-requisites
 
