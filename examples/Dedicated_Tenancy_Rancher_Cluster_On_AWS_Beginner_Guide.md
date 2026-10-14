@@ -2,6 +2,9 @@
 
 A step-by-step beginner's guide to building a Rancher RKE2 cluster on AWS where every server is an EC2 Dedicated Instance, using an existing Rancher management cluster, existing IAM resources and an existing VPC.
 
+## Youtube Video
+https://www.youtube.com/watch?v=LarVMAQoPkE
+
 ## Task
 
 **Dedicated tenancy** is an AWS setting that runs your EC2 instances (virtual servers you rent from AWS) on hardware that is dedicated to your AWS account alone. This guide shows you how to build a Kubernetes cluster where every server is a Dedicated Instance, managed by **Rancher**. Rancher's usual EC2 tool, the amazonec2 node driver, cannot ask AWS for dedicated hardware. So this guide uses **CAPA** (Cluster API Provider for AWS), a tool that Rancher can use instead. You start from things that already exist: a Rancher management cluster, IAM instance profiles, an IAM access key, and a VPC (your private network in AWS) with its subnets. You add CAPA to Rancher, give Rancher the access key, and describe the new cluster in a Helm chart (a small package of templates plus a settings file). One command then builds the cluster inside your VPC.
